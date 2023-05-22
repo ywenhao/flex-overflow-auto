@@ -1,25 +1,40 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="root-box">
-    <div class="header"></div>
-    <div class="content">
-      <div class="filter"></div>
-      <div class="table-box">
-        <div class="table">
-          <div class="item" v-for="item in 500" :key="item" />
+  <div class="root">
+    <div class="left"></div>
+    <div class="container-box">
+      <div class="header"></div>
+      <div class="content">
+        <div class="filter"></div>
+        <div class="table-box">
+          <div class="table">
+            <div class="item" v-for="item in 50" :key="item" />
+          </div>
         </div>
+        <div class="page"></div>
       </div>
-      <div class="page"></div>
+      <div class="footer"></div>
     </div>
-    <div class="footer"></div>
   </div>
 </template>
 
 <style lang="scss">
-.root-box {
+.root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.left {
+  width: 200px;
+  height: 100%;
+  background: #f4fad2;
+}
+.container-box {
   height: 100%;
   display: flex;
+  flex: 1;
+  overflow-y: auto;
   flex-direction: column;
   background: #d9d9d9;
   padding: 0 20px;
@@ -39,6 +54,7 @@
     }
     .table-box {
       flex: 1;
+      // flex-basis: 0;
       margin-top: 12px;
       // 滚动
       // flex-basis: 0;
